@@ -1,0 +1,1 @@
+# traefik-plugin-cookie-path-prefix
