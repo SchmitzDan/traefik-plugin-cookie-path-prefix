@@ -1,4 +1,5 @@
-package traefikPluginCookiePathPrefix
+// Package traefikcookiepathprefix
+package traefikcookiepathprefix
 
 import (
 	"context"
@@ -64,7 +65,7 @@ func TestServeHttp(t *testing.T) {
 
 	for _, test := range tests {
 		t.Run(test.desc, func(t *testing.T) {
-			config := &Config{
+			config := &config{
 				Prefix: test.prefix,
 			}
 

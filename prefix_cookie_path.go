@@ -1,31 +1,31 @@
-package traefikPluginCookiePathPrefix
+// Package traefikcookiepathprefix
+package traefikcookiepathprefix
 
 import (
 	"context"
 	"net/http"
-	"os"
 )
 
 const setCookieHeader string = "Set-Cookie"
 
-type Config struct {
+type config struct {
 	Prefix string `json:"prefix,omitempty" toml:"prefix,omitempty" yaml:"prefix,omitempty"`
 }
 
 // CreateConfig creates and initializes the plugin configuration.
-func CreateConfig() *Config {
-	return &Config{}
+func CreateConfig() *config {
+	return &config{}
 }
 
+// PathPrefixer a Plugin prefixing all cookie Pathes with a given prefix
 type PathPrefixer struct {
 	next   http.Handler
 	name   string
 	prefix string
 }
 
-func New(_ context.Context, next http.Handler, config *Config, name string) (http.Handler, error) {
-	os.Stdout.WriteString("Plugin cookie path prefix started")
-
+// New creates a Path Prefixer
+func New(_ context.Context, next http.Handler, config *config, name string) (http.Handler, error) {
 	return &PathPrefixer{
 		name:   name,
 		next:   next,
