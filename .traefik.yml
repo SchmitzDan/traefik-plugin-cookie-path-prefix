@@ -1,0 +1,8 @@
+displayName: Prefix Cookie Path Plugin
+type: middleware
+import: github.com/SchmitzDan/traefik-plugin-cookie-path-prefix
+
+summary: 'Add Prefix to the path of a cookie in the response'
+
+testData:
+  prefix: foo
