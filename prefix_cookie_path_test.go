@@ -1,4 +1,4 @@
-package traefik_plugin_cookie_path_prefix
+package traefikPluginCookiePathPrefix
 
 import (
 	"context"
@@ -8,7 +8,6 @@ import (
 )
 
 func TestServeHttp(t *testing.T) {
-
 	tests := []struct {
 		desc          string
 		prefix        string

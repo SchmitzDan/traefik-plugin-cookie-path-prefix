@@ -1,5 +1,4 @@
-// Package
-package traefik_plugin_cookie_path_prefix
+package traefikPluginCookiePathPrefix
 
 import (
 	"context"
@@ -25,10 +24,7 @@ type PathPrefixer struct {
 }
 
 func New(_ context.Context, next http.Handler, config *Config, name string) (http.Handler, error) {
-
 	os.Stdout.WriteString("Plugin cookie path prefix started")
-
-	//TODO: Check config?
 
 	return &PathPrefixer{
 		name:   name,
@@ -60,19 +56,18 @@ func (r *responseWriter) Write(bytes []byte) (int, error) {
 }
 
 func (r *responseWriter) WriteHeader(statusCode int) {
-
-	//workaround to get the cookies
+	// workaround to get the cookies
 	headers := r.writer.Header()
 	req := http.Response{Header: headers}
 	cookies := req.Cookies()
 
-	//Delete set-cookie headers
+	// Delete set-cookie headers
 	r.writer.Header().Del(setCookieHeader)
 
-	//Add new cookie with modifies path
+	// Add new cookie with modifies path
 	for _, cookie := range cookies {
 		if cookie.Path == "/" {
-			//prevent trailing /
+			// prevent trailing /
 			cookie.Path = "/" + r.prefix
 		} else {
 			cookie.Path = "/" + r.prefix + cookie.Path
