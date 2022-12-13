@@ -2,7 +2,7 @@
 
 Cookie Path Prefixer is a middleware plugin for [Traefik](https://traefik.io) which adds a prefix to the path of a cookie in the response. If no path is defined in the cookie, a new path constructed from the prefix will be set.
 
-[![Build Status](https://github.com/SchmitzDan/traefik-plugin-cookie-path-prefix/workflows/Main/badge.svg?branch=master)](https://github.com/SchmitzDan/traefik-plugin-cookie-path-prefix/actions)
+[![Build Status](https://github.com/SchmitzDan/traefik-plugin-cookie-path-prefix/workflows/Main/badge.svg?branch=main)](https://github.com/SchmitzDan/traefik-plugin-cookie-path-prefix/actions)
 
 ## Configuration
 
