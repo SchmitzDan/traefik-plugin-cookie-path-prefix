@@ -1,4 +1,4 @@
-// Package traefikcookiepathprefix
+// Package traefikcookiepathprefix a traefik plugin adding a prefix to the path of cookies in the response.
 package traefikcookiepathprefix
 
 import (
@@ -8,24 +8,25 @@ import (
 
 const setCookieHeader string = "Set-Cookie"
 
-type config struct {
+// Config holding the prefix to add.
+type Config struct {
 	Prefix string `json:"prefix,omitempty" toml:"prefix,omitempty" yaml:"prefix,omitempty"`
 }
 
 // CreateConfig creates and initializes the plugin configuration.
-func CreateConfig() *config {
-	return &config{}
+func CreateConfig() *Config {
+	return &Config{}
 }
 
-// PathPrefixer a Plugin prefixing all cookie Pathes with a given prefix
+// PathPrefixer a Plugin prefixing all cookie Pathes with a given prefix.
 type PathPrefixer struct {
 	next   http.Handler
 	name   string
 	prefix string
 }
 
-// New creates a Path Prefixer
-func New(_ context.Context, next http.Handler, config *config, name string) (http.Handler, error) {
+// New creates a Path Prefixer.
+func New(_ context.Context, next http.Handler, config *Config, name string) (http.Handler, error) {
 	return &PathPrefixer{
 		name:   name,
 		next:   next,

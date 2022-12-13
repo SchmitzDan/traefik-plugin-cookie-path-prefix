@@ -1,4 +1,4 @@
-// Package traefikcookiepathprefix
+// Package traefikcookiepathprefix a traefik plugin adding a prefix to the path of cookies in the response.
 package traefikcookiepathprefix
 
 import (
@@ -65,7 +65,7 @@ func TestServeHttp(t *testing.T) {
 
 	for _, test := range tests {
 		t.Run(test.desc, func(t *testing.T) {
-			config := &config{
+			config := &Config{
 				Prefix: test.prefix,
 			}
 
