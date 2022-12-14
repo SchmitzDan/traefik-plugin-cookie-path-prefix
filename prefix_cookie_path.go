@@ -1,5 +1,5 @@
-// Package traefikcookiepathprefix a traefik plugin adding a prefix to the path of cookies in the response.
-package traefikcookiepathprefix
+// Package traefik_plugin_cookie_path_prefix a traefik plugin adding a prefix to the path of cookies in the response.
+package traefik_plugin_cookie_path_prefix
 
 import (
 	"context"
