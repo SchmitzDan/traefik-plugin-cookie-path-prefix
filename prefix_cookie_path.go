@@ -65,7 +65,7 @@ func (r *responseWriter) WriteHeader(statusCode int) {
 	// Delete set-cookie headers
 	r.writer.Header().Del(setCookieHeader)
 
-	// Add new cookie with modifies path
+	// Add new cookie with modified path
 	for _, cookie := range cookies {
 		if cookie.Path == "/" {
 			// prevent trailing /
@@ -75,4 +75,6 @@ func (r *responseWriter) WriteHeader(statusCode int) {
 		}
 		http.SetCookie(r, cookie)
 	}
+
+	r.writer.WriteHeader(statusCode)
 }
