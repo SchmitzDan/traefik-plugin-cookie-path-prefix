@@ -13,7 +13,7 @@ experimental:
   plugins:
     cookiePathPrefix:
       modulename: "github.com/SchmitzDan/traefik-plugin-cookie-path-prefix"
-      version: "v0.0.1"
+      version: "v0.0.3" #replace with newest version
 ```
 
 ### Dynamic
